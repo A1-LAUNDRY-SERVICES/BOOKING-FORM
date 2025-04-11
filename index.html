@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>A-1 Laundry Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #003366;
+      margin: 0;
+      padding: 2em;
+      color: #FFD700;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: auto;
+      background: #001f3f;
+      padding: 2em;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 1.8em;
+      font-weight: 600;
+      color: #FFD700;
+      margin-bottom: 1.2em;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    label {
+      font-weight: 500;
+      margin-top: 1.5em;
+      display: block;
+      color: #FFD700;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 0.75em 1em;
+      margin-top: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1em;
+      background: #fdfdfd;
+      color: #000;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #FFD700;
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+      outline: none;
+    }
+
+    .checkbox-group {
+      margin-top: 1em;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6em 1em;
+      background: #002b5c;
+      border-radius: 10px;
+      margin-bottom: 0.6em;
+      transition: background 0.3s;
+      color: #FFD700;
+    }
+
+    .checkbox-item.highlight {
+      background: #004080;
+      border: 1px solid #FFD700;
+    }
+
+    .checkbox-item label {
+      flex: 1;
+      margin-right: 1em;
+      font-size: 0.95em;
+      color: #FFD700;
+    }
+
+    .checkbox-item input[type="number"] {
+      width: 80px;
+      padding: 0.5em;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .totals-box {
+      background: #002b5c;
+      border: 2px solid #FFD700;
+      border-radius: 10px;
+      padding: 1em;
+      margin-top: 1em;
+      font-weight: 600;
+      text-align: right;
+      color: #FFD700;
+    }
+
+    button {
+      margin-top: 2em;
+      width: 100%;
+      padding: 1em;
+      background-color: #FFD700;
+      color: #003366;
+      font-size: 1.1em;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #ffcc00;
+      transform: scale(1.01);
+    }
+
+    .note,
+    .disclaimer {
+      margin-top: 1.5em;
+      font-size: 0.85em;
+      line-height: 1.6;
+      color: #FFD700;
+    }
+
+    .note {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>A-1 LAUNDRY SERVICES BOOKING FORM</h1>
+  <h1>88 796 55 728</h1>
+  
+  <form id="laundryForm">
+    <label for="name">Customer Name</label>
+    <input id="name" name="name" required type="text" />
+    <label for="phone">Customer Number</label>
+    <input id="phone" name="phone" required type="tel" />
+    <label for="address">Pickup Address</label>
+    <input id="address" name="address" required type="text" />
+
+    <label>Standard Services</label>
+    <div class="checkbox-group" id="standardServices">
+      <div class="checkbox-item"><label><input data-rate="8" type="checkbox"/> Ironing (Pc) - ₹8</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="80" type="checkbox"/> Wash & Iron (Kg) - ₹80</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="30" type="checkbox"/> Wash & Iron (Pc) - ₹30</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="299" type="checkbox"/> Sports Shoe Cleaning (Pair) - ₹299</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="249" type="checkbox"/> Helmet Cleaning (Pc) - ₹249</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="199" type="checkbox"/> Household Items (Kg) - ₹199</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="20" type="checkbox"/> Steam Iron (Pc) - ₹20</label><input type="number" value="0"/></div>
+    </div>
+
+    <label>Express Services</label>
+    <div class="checkbox-group" id="expressServices">
+      <div class="checkbox-item"><label><input data-rate="20" type="checkbox"/> Ironing (Pc) EXPRESS - ₹20</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="120" type="checkbox"/> Wash & Iron (Kg) EXPRESS - ₹120</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="50" type="checkbox"/> Wash & Iron (Pc) EXPRESS - ₹50</label><input type="number" value="0"/></div>
+      <div class="checkbox-item"><label><input data-rate="50" type="checkbox"/> Steam Iron (Pc) EXPRESS - ₹50</label><input type="number" value="0"/></div>
+    </div>
+
+    <div class="totals-box" id="subtotal">Subtotal: ₹0</div>
+    <div class="totals-box" id="discount">Discount: ₹0</div>
+    <div class="totals-box" id="payable">Payable Amount: ₹0</div>
+
+    <label for="instructions">Special Instructions (Optional)</label>
+    <textarea id="instructions" name="instructions" placeholder="E.g., Use mild detergent, avoid machine drying, etc." rows="3"></textarea>
+
+    <div class="note">We Pick up in 30 minutes after your order placed on whatsapp successfully<br>
+    Standard delivery within 24 hrs<br>
+    Express Delivery within 6 hrs<br>
+    for more express service chat/call us on WhatsApp</div>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong><br>
+      - Damage or Loss: We strive to handle your garments with care, but we are not responsible for damage or loss due to unforeseen circumstances.<br>
+      - Color Bleeding or Fading: We take precautions to prevent color bleeding or fading, but we cannot guarantee that it won't happen.<br>
+      - Fabric Care: We follow standard laundry practices, but some fabrics may require special care. Please inform us of any specific needs.<br>
+      - Stains: We do our best to remove stains, but some may not be completely removable.<br>
+      - Return Policy: If you're not satisfied with our service, please contact us within [timeframe] to discuss a possible resolution.<br><br>
+      <strong>Liability Limitations:</strong><br>
+      - We are not liable for any consequential or indirect damages.<br>
+      - Our liability is limited to the value of the laundry service provided.<br><br>
+      <strong>Customer Responsibility:</strong><br>
+      - Please ensure that your garments are suitable for washing and drying.<br>
+      - Inform us of any specific laundry instructions or requirements.<br><br>
+      By using our laundry service, you acknowledge that you have read, understand, and agree to these terms.
+    </div>
+
+    <button onclick="placeOrder()" type="button">Book ur Laundry</button>
+  </form>
+</div>
+<script>
+function calculateTotal() {
+  const items = document.querySelectorAll('.checkbox-item');
+  let subtotal = 0;
+  items.forEach(item => {
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    const quantityInput = item.querySelector('input[type="number"]');
+    const quantity = parseInt(quantityInput.value) || 0;
+    const rate = parseInt(checkbox.getAttribute('data-rate'));
+    quantityInput.disabled = !checkbox.checked;
+    item.classList.toggle('highlight', checkbox.checked);
+    if (checkbox.checked && quantity > 0) {
+      subtotal += rate * quantity;
+    }
+  });
+  let discount = 0;
+  if (subtotal > 1500) discount = Math.floor(subtotal * 0.05);
+  else if (subtotal > 1000) discount = 50;
+  else if (subtotal > 750) discount = 30;
+  else if (subtotal > 500) discount = 20;
+  else if (subtotal > 250) discount = 10;
+  const payable = subtotal - discount;
+  document.getElementById('subtotal').textContent = `Subtotal: ₹${subtotal}`;
+  document.getElementById('discount').textContent = `Discount: ₹${discount}`;
+  document.getElementById('payable').textContent = `Payable Amount: ₹${payable}`;
+  return { subtotal, discount, payable };
+}
+function validateSelection() {
+  const rows = document.querySelectorAll(".checkbox-item");
+  let valid = false;
+  rows.forEach(row => {
+    const checkbox = row.querySelector("input[type='checkbox']");
+    const quantityInput = row.querySelector("input[type='number']");
+    const qty = parseInt(quantityInput.value || 0);
+    if (checkbox.checked && qty >= 1) {
+      valid = true;
+    }
+  });
+  if (!valid) {
+    alert("Please select at least one service with quantity of 1 or more to place an order.");
+  }
+  return valid;
+}
+function placeOrder() {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const address = document.getElementById('address').value.trim();
+  if (!name || !phone || !address) {
+    ['name', 'phone', 'address'].forEach(id => {
+      const input = document.getElementById(id);
+      if (!input.value.trim()) {
+        input.style.borderColor = 'red';
+        input.style.boxShadow = '0 0 0 2px rgba(255,0,0,0.2)';
+      } else {
+        input.style.borderColor = '';
+        input.style.boxShadow = '';
+      }
+    });
+    alert("Please fill in Customer Name, Number, and Address.");
+    return;
+  }
+  if (!validateSelection()) return;
+  const instructions = document.getElementById('instructions').value;
+  const items = document.querySelectorAll('.checkbox-item');
+  let orderDetails = '';
+  items.forEach(item => {
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    const quantityInput = item.querySelector('input[type="number"]');
+    const quantity = parseInt(quantityInput.value) || 0;
+    const service = checkbox.parentElement.textContent.trim();
+    const rate = parseInt(checkbox.getAttribute('data-rate'));
+    if (checkbox.checked && quantity > 0) {
+      orderDetails += `
+${service}: ${quantity} x ₹${rate} = ₹${rate * quantity}`;
+    }
+  });
+  const { subtotal, discount, payable } = calculateTotal();
+  const message = `Hello, I want to place a laundry order.
+
+Name: ${name}
+Phone: ${phone}
+Pickup Address: ${address}
+${orderDetails}
+
+Subtotal: ₹${subtotal}
+Discount: ₹${discount}
+Payable Amount: ₹${payable}` + (instructions ? `
+
+Instructions: ${instructions}` : '');
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/+918879655728?text=${encodedMessage}`;
+  window.open(whatsappURL, '_blank');
+}
+window.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.checkbox-item');
+  items.forEach(item => {
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    const quantityInput = item.querySelector('input[type="number"]');
+    checkbox.addEventListener('change', calculateTotal);
+    quantityInput.addEventListener('input', calculateTotal);
+  });
+  calculateTotal();
+});
+</script>
+</body>
+</html>
